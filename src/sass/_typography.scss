@@ -5,19 +5,18 @@
 
 $typo-title: (
   small: (
-    '1': ('font-size': 4, 'line-height': 1.2, 'font-weight': 600,),
+    '1': ('font-size': 3.2, 'line-height': 1.2, 'font-weight': 600,),
   ),
   medium: (
-    '1': ('font-size': 6, 'line-height': 1.2),
+    '1': ('font-size': 4, 'line-height': 1.2),
   ),
-  xxlarge: (
-    '1': ('font-size': 7, 'line-height': 1.2),
-  )
 );
 
 @include create-typo("title", $typo-title);
 
-// ----- Custom typo -----
+.title-1 {
+  color: red;
+}
 
 .text {
   color: $text;
