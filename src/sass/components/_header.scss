@@ -10,7 +10,7 @@
   padding: 0 3rem;
   box-sizing: border-box;
   color: white;
-  background: red;
+  background: $white;
   transition: all ease .5s;
 
   @include breakpoint('mainNav'){
@@ -28,6 +28,9 @@
     align-items: center;
     z-index: 999;
     transition: all ease .5s;
+    height: 100%;
+    margin-bottom: 1rem;
+    align-items: flex-end;
     
     &-img {
       height: 4.5rem;
@@ -42,6 +45,19 @@
     align-items: center; //vertikálně na střed
     justify-content: space-between; //logo vlevo, hamburger tlačítko vpravo (zbytek je ignorován kvůli display: none)
     margin: auto;
+    //border-bottom: 1px solid red;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px; // tloušťka linky
+      width: 100%;
+      //background: linear-gradient(to right, black, #ccc); // černá doleva, šedá doprava
+      //background: linear-gradient(to right, black 0%, black 20%, #ccc 20%, #ccc 100%);
+      background: linear-gradient(to right, black 0%, #333 10%, #666 30%, #ccc 60%, #ccc 100%);
+    }
   }
 
   &__collapse {
@@ -163,7 +179,7 @@
 
   &__link {
     font-size: 1.6rem;
-    color: white;
+    color: $darkGrey;
     line-height: 1;
     position: relative;
     text-decoration: none;

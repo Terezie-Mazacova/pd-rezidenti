@@ -2,6 +2,7 @@
 /*---------------------------------------------------
                   Global variables
 ---------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Podkova:wght@400..800&display=swap");
 /**
  * Foundation for Sites by ZURB
  * Version 6.5.3
@@ -2474,7 +2475,7 @@ html {
 body {
   background-color: white;
   color: #333;
-  font-family: "HKGrotesk", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
   text-align: left; }
@@ -2506,12 +2507,12 @@ td + td {
   font-family: "small=0em&medium=40em&large=64em&xlarge=75em&xxlarge=90em"; }
 
 ::-moz-selection {
-  background: #000F9E;
-  background: rgba(0, 15, 158, 0.3); }
+  background: #CFA63B;
+  background: rgba(207, 166, 59, 0.3); }
 
 ::selection {
-  background: #000F9E;
-  background: rgba(0, 15, 158, 0.3); }
+  background: #CFA63B;
+  background: rgba(207, 166, 59, 0.3); }
 
 .svg-img {
   fill: currentColor;
@@ -2543,7 +2544,7 @@ td + td {
   .canvas--gray {
     background: #F2F2F2; }
   .canvas--footer {
-    background: #000F9E;
+    background: #CFA63B;
     color: white; }
   @media print, screen and (min-width: 48em) {
     .canvas {
@@ -2941,7 +2942,7 @@ button:focus {
   padding: 0 3rem;
   box-sizing: border-box;
   color: white;
-  background: red;
+  background: #fff;
   transition: all ease .5s; }
   @media screen and (min-width: 80em) {
     .header {
@@ -2954,7 +2955,11 @@ button:focus {
     -ms-flex-align: center;
         align-items: center;
     z-index: 999;
-    transition: all ease .5s; }
+    transition: all ease .5s;
+    height: 100%;
+    margin-bottom: 1rem;
+    -ms-flex-align: end;
+        align-items: flex-end; }
     .header__logo-img {
       height: 4.5rem;
       width: auto; }
@@ -2967,6 +2972,14 @@ button:focus {
     -ms-flex-pack: justify;
         justify-content: space-between;
     margin: auto; }
+    .header__container::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(to right, black 0%, #333 10%, #666 30%, #ccc 60%, #ccc 100%); }
   .header__collapse {
     position: fixed;
     z-index: -1;
@@ -2975,7 +2988,7 @@ button:focus {
     bottom: 0;
     width: 100%;
     padding: 1rem;
-    background-color: #000F9E;
+    background-color: #CFA63B;
     overflow-y: scroll;
     overflow-x: hidden;
     opacity: 0;
@@ -3037,7 +3050,7 @@ button:focus {
 .nav {
   padding: 0 0 2rem 0;
   margin-top: 0;
-  font-family: "HKGrotesk", sans-serif; }
+  font-family: "Barlow", sans-serif; }
   .nav__item {
     display: block;
     height: 100%;
@@ -3060,7 +3073,7 @@ button:focus {
             flex-direction: row; } }
   .nav__link {
     font-size: 1.6rem;
-    color: white;
+    color: #A8A8A8;
     line-height: 1;
     position: relative;
     text-decoration: none;
@@ -3173,19 +3186,19 @@ button:focus {
 
 .orejime-Button--save,
 .orejime-Button--accept {
-  border: 0.1rem solid #000F9E;
-  background: #000F9E;
+  border: 0.1rem solid #CFA63B;
+  background: #CFA63B;
   color: #fff; }
 
 .orejime-Button--decline {
   background: transparent;
   padding: 0;
-  color: #000F9E; }
+  color: #CFA63B; }
 
 .orejime-Button--info {
   background: transparent;
-  border: 0.1rem solid #000F9E;
-  color: #000F9E; }
+  border: 0.1rem solid #CFA63B;
+  color: #CFA63B; }
 
 .orejime-Notice {
   background: white;
@@ -3497,7 +3510,7 @@ button:focus {
   outline-offset: 2px; }
 
 .orejime-AppItem-input:checked + .orejime-AppItem-label .orejime-AppItem-slider {
-  background-color: #000F9E; }
+  background-color: #CFA63B; }
 
 .orejime-AppItem-input:checked + .orejime-AppItem-label .orejime-AppItem-slider:before {
   transform: translateX(20px); }
@@ -3510,8 +3523,8 @@ button:focus {
   display: inline; }
 
 .orejime-AppToggles-enableAll {
-  border: 0.1rem solid #000F9E;
-  background: #000F9E;
+  border: 0.1rem solid #CFA63B;
+  background: #CFA63B;
   color: #fff; }
 
 .orejime-Notice-purposes {
@@ -3597,7 +3610,7 @@ button:focus {
         align-items: center;
     font-size: 18rem;
     font-weight: 600;
-    color: #000F9E;
+    color: #CFA63B;
     opacity: .05; }
     @media print, screen and (min-width: 48em) {
       .error__bg {
@@ -3615,7 +3628,7 @@ button:focus {
         font-size: 1.8rem; } }
   .error__title {
     font-weight: 600;
-    color: #000F9E;
+    color: #CFA63B;
     font-size: 4rem; }
     @media print, screen and (min-width: 48em) {
       .error__title {
@@ -3628,7 +3641,7 @@ button:focus {
     color: #333333; }
     .error__text a {
       font-weight: 600;
-      color: #000F9E;
+      color: #CFA63B;
       text-decoration: underline; }
       .error__text a:hover {
         text-decoration: none; }
