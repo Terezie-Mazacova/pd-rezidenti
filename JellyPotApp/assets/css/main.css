@@ -2667,7 +2667,7 @@ button:focus {
     font-size: 4rem;
     line-height: 1.2; } }
 
-.title-1 {
+.main-title {
   color: red; }
 
 .text {
@@ -2935,18 +2935,18 @@ button:focus {
 --------------------------------------------*/
 .header {
   width: 100%;
-  height: 6rem;
+  height: 7.2rem;
   position: fixed;
   top: 0;
   z-index: 1000;
-  padding: 0 3rem;
+  padding: 0 1rem 0 3rem;
   box-sizing: border-box;
   color: white;
   background: #fff;
   transition: all ease .5s; }
   @media screen and (min-width: 80em) {
     .header {
-      height: 8rem; } }
+      height: 7.2rem; } }
   .header__logo {
     display: -ms-flexbox;
     display: flex;
@@ -2957,11 +2957,11 @@ button:focus {
     z-index: 999;
     transition: all ease .5s;
     height: 100%;
-    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
     -ms-flex-align: end;
         align-items: flex-end; }
     .header__logo-img {
-      height: 4.5rem;
+      height: 6rem;
       width: auto; }
   .header__container {
     display: -ms-flexbox;
@@ -2979,7 +2979,7 @@ button:focus {
       left: 0;
       height: 1px;
       width: 100%;
-      background: linear-gradient(to right, black 0%, #333 10%, #666 30%, #ccc 60%, #ccc 100%); }
+      background: linear-gradient(to right, black 10%, #333 20%, #666 30%, #C4C4C4 40%, #C4C4C4 100%); }
   .header__collapse {
     position: fixed;
     z-index: -1;
