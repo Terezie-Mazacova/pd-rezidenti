@@ -1,3 +1,116 @@
 .footer {
-    
+    &__contact {
+        padding-bottom: 7.5rem;
+        margin-bottom: 7.5rem;
+        border-bottom: 0.1rem solid $white;
+
+        &-label {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 5rem;
+        }
+
+        &-item {
+            display: flex;
+            gap: 3.5rem;
+
+            & + & {
+                margin-top: 2rem;
+            }
+
+            &-text {
+                font-size: 2rem;
+                font-weight: 700;
+
+                &--orange {
+                    color: $goldenOrange;
+                    text-decoration: underline;
+                    text-decoration-color: $goldenOrange;
+                    text-underline-offset: 1rem;
+                    text-decoration-thickness: 0.05rem;
+                }
+            }
+        }
+
+        &--client {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+    }
+
+    &__identity {
+        margin-bottom: 7.5rem;
+
+        &-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        &-text {
+            p {
+                font-size: 1.8rem;
+                font-weight: 400;
+                line-height: 2;
+            }
+        }
+    }
+
+    &__block {
+        margin-bottom: 7.5rem;
+
+        &-links {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            &-wrapper {
+                display: flex;
+                gap: 3rem;
+
+                &:hover .footer__block-links-icon {
+                    transform: translateX(0.5rem);
+                }
+
+                & + & {
+                    margin-top: 3rem;
+                }
+            }
+
+            &-icon {
+                transition: transform 0.3s ease;
+            }
+            
+            &-text {
+                font-family: $font-s;
+                color: $goldenOrange;
+                font-size: 2rem;
+                font-weight: 800;
+            }
+        }
+
+        &-social {
+            &-title {
+                font-size: 1.4rem;
+                margin-left: 0.1rem;
+            }
+            &-icon {
+                width: 3.5rem;
+                height: 3.5rem;
+                margin-top: 0.5rem;
+                
+            }
+        }
+    }
+
+    &__legal {
+        color: $white;
+        opacity: 50%;
+        font-size: 1.8rem;
+        font-weight: 400;
+        &-content {
+            &-cookies {
+                margin-top: 3rem;
+            }
+        }
+    }
 }
