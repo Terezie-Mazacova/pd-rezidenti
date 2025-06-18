@@ -96,8 +96,12 @@
             &-icon {
                 width: 3.5rem;
                 height: 3.5rem;
-                margin-top: 0.5rem;
+                margin-top: 1.3rem;
                 
+                // == WHYYYYYY
+                & + & {
+                    padding-right: 1.5rem;
+                }
             }
         }
     }
@@ -107,6 +111,7 @@
         opacity: 50%;
         font-size: 1.8rem;
         font-weight: 400;
+
         &-content {
             &-cookies {
                 margin-top: 3rem;

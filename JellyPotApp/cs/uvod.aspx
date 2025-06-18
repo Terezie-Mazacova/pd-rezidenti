@@ -17,11 +17,24 @@
 <je:content runat="server" forRegion="headerClass">header--scrolled</je:content>
 
 <je:content runat="server" forRegion="main">
-    <section class="canvas canvas--first canvas--white">
-        <div class="row">
-            <div class="column medium-12 small-12">
-                <je:item runat="server" field=".title" tag="h1" class="title-1" />
-            </div>
+    <section class="canvas canvas--white canvas--jumbo intro__section">
+        <div class="intro__section-bg">
+            <je:img runat="server" field=".abstractBg" class="intro__section-bg-img" />
         </div>
+
+        <div class="row">
+            <div class="column medium-2 small-12"></div>
+
+            <div class="column medium-8 small-12 intro__section-content">
+                <je:item runat="server" field=".title" tag="h1" class="main-title" />
+                <je:item runat="server" field=".introInfo" tag="div" class="intro__section-content-text" />
+            </div>
+
+            <div class="column medium-2 small-12"></div>
+        </div>
+    </section>
+
+    <section class="canvas canvas--white">
+        
     </section>
 </je:content>

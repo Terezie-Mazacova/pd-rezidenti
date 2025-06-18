@@ -2557,6 +2557,9 @@ td + td {
       padding: 10rem 0; } }
   .canvas--first {
     margin-top: 8rem; }
+  .canvas--jumbo {
+    margin-top: 7.2rem;
+    padding-top: 0; }
 
 .canvas--white + .canvas--white {
   padding-top: 0; }
@@ -2668,7 +2671,15 @@ button:focus {
     line-height: 1.2; } }
 
 .main-title {
-  color: red; }
+  font-family: "Podkova", serif;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 3rem; }
+
+.perex {
+  font-size: 2.4rem;
+  font-weight: 400; }
 
 .text {
   color: #333333;
@@ -3146,6 +3157,33 @@ button:focus {
       .nav__link:hover, .nav__link:active, .nav__link--active {
         color: white;
         transition: color linear .3s; } }
+
+.intro__section {
+  position: relative; }
+  .intro__section-bg {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0; }
+    .intro__section-bg-img {
+      width: 100%;
+      object-fit: cover; }
+  .intro__section-content {
+    margin-top: 13rem;
+    text-align: center; }
+    .intro__section-content-highlight {
+      color: #CFA63B;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin: 2rem 0;
+      text-decoration: underline;
+      text-transform: uppercase;
+      text-decoration-thickness: 0.1rem; }
+    .intro__section-content-hours {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #A8A8A8;
+      margin-top: 1rem; }
 
 [class^="orejime-"] {
   margin: 0;
@@ -3649,7 +3687,9 @@ button:focus {
   .footer__block-social-icon {
     width: 3.5rem;
     height: 3.5rem;
-    margin-top: 0.5rem; }
+    margin-top: 1.3rem; }
+    .footer__block-social-icon + .footer__block-social-icon {
+      padding-right: 1.5rem; }
 
 .footer__legal {
   color: #fff;

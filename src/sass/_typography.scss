@@ -15,7 +15,16 @@ $typo-title: (
 @include create-typo("title", $typo-title);
 
 .main-title {
-  color: red;
+  font-family: $font-s;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 3rem;
+}
+
+.perex {
+  font-size: 2.4rem;
+  font-weight: 400;
 }
 
 .text {

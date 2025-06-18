@@ -1,3 +1,43 @@
 .home {
     
 }
+
+
+
+.intro__section {
+    position: relative;
+
+    &-bg {
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        top: 0;
+
+        &-img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-content {
+        margin-top: 13rem;
+        text-align: center;
+
+        &-highlight {
+            color: $primary;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin: 2rem 0;
+            text-decoration: underline;
+            text-transform: uppercase;
+            text-decoration-thickness: 0.1rem;
+        }
+
+        &-hours {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: $darkGrey;
+            margin-top: 1rem;
+        }
+    }
+}

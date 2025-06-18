@@ -139,6 +139,11 @@ td + td {
   &--first {
     margin-top: 8rem;
   }
+
+  &--jumbo {
+    margin-top: 7.2rem;
+    padding-top: 0;
+  }
 }
 
 .canvas--white + .canvas--white {
