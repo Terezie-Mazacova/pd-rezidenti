@@ -7,11 +7,12 @@
   position: fixed;
   top: 0;
   z-index: 1000;
-  padding: 0 1rem 0 3rem;
+  padding: 0 1rem 0 0;
   box-sizing: border-box;
   color: white;
   background: $white;
   transition: all ease .5s;
+  margin-left: 3rem;
 
   @include breakpoint('mainNav'){
     height: 7.2rem;
@@ -44,8 +45,8 @@
     height: inherit;
     align-items: center; //vertikálně na střed
     justify-content: space-between; //logo vlevo, hamburger tlačítko vpravo (zbytek je ignorován kvůli display: none)
-    margin: auto;
     //border-bottom: 1px solid red;
+    margin-right: 3rem;
 
     &::after {
       content: "";

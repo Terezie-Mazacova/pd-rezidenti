@@ -6,19 +6,12 @@
             <div class="footer__contact">
                 <je:item runat="server" field="footer.receptionLabel" tag="p" class="footer__contact-label" />
                 <je:repeater runat="server" source="footer.receptionContact">
-                    <item1>
+                    <item>
                         <div class="footer__contact-item">
                             <je:img runat="server" field=".icon" class="footer__contact-item-icon" />
                             <je:item runat="server" field=".text" tag="p" class="footer__contact-item-text" />
                         </div>
-                    </item1>
-
-                    <item2>
-                        <div class="footer__contact-item">
-                            <je:img runat="server" field=".icon" class="footer__contact-item-icon" />
-                            <je:item runat="server" field=".text" tag="p" class="footer__contact-item-text footer__contact-item-text--orange" />
-                        </div>
-                    </item2>
+                    </item>
                 </je:repeater>
             </div>
         </div>
@@ -75,47 +68,6 @@
             </je:repeater>
         </div>
     </div>
-
-    <!--
-    <div>
-        <div class="">
-            <div class="">
-                <je:item runat="server" field="footer.clientLabel" tag="p" class="" />
-                <je:repeater runat="server" source="footer.clientContact">
-                    <item>
-                        <je:img runat="server" field=".icon" class="" />
-                        <je:item runat="server" field=".text" tag="p" class="" />
-                    </item>
-                </je:repeater>
-            </div>
-
-            <div class="">
-                <je:repeater runat="server" source="footer.footerLinks">
-                    <item>
-                        <div>
-                            <je:item runat="server" field=".btn" tag="p" class="" />
-                            <je:img runat="server" src="/assets/img/arrow.svg" class="" />
-                        </div>
-                    </item>
-                </je:repeater>
-            </div>
-        </div>
-
-        <div class="">
-            <div class="">
-                <je:item runat="server" field="footer.socialTitle" tag="p" class="" />
-                <je:repeater runat="server" source="footer.socialIcons">
-                    <item>
-                        <je:a runat="server" href="{.link}" class="" target="_blank">
-                            <je:img runat="server" field=".icon" class="" />
-                        </je:a>
-                    </item>
-                </je:repeater>
-            </div>
-        </div>
-        
-    </div>
-    -->
 
     <div class="row">
         <div class="column medium-12 small-12 footer__legal">

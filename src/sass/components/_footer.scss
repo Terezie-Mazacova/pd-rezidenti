@@ -13,6 +13,7 @@
         &-item {
             display: flex;
             gap: 3.5rem;
+            cursor: pointer;
 
             & + & {
                 margin-top: 2rem;
@@ -22,12 +23,13 @@
                 font-size: 2rem;
                 font-weight: 700;
 
-                &--orange {
+                &:hover {
                     color: $goldenOrange;
                     text-decoration: underline;
                     text-decoration-color: $goldenOrange;
                     text-underline-offset: 1rem;
                     text-decoration-thickness: 0.05rem;
+                    transition: $timing-normal;
                 }
             }
         }
@@ -97,11 +99,7 @@
                 width: 3.5rem;
                 height: 3.5rem;
                 margin-top: 1.3rem;
-                
-                // == WHYYYYYY
-                & + & {
-                    padding-right: 1.5rem;
-                }
+                margin-right: 0.7rem;
             }
         }
     }

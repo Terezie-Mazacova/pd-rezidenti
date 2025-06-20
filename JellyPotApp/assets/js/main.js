@@ -1,3 +1,123 @@
+$(document).foundation();
+
+function countUpNumber(el) {
+   var targetValue = $(el).data("value");
+   var numAnim = new CountUp(el, 0, targetValue);
+   if (!numAnim.error) {
+      numAnim.start();
+   } else {
+      console.error(numAnim.error);
+   }
+}
+
+/* Detect Mobile Browser: */
+function isMobile() {
+   if (navigator.userAgent.match(/Android/i) ||
+     navigator.userAgent.match(/webOS/i) ||
+     navigator.userAgent.match(/iPhone/i) ||
+     navigator.userAgent.match(/iPod/i) ||
+     navigator.userAgent.match(/iPad/i) ||
+     navigator.userAgent.match(/BlackBerry/i) ||
+     navigator.userAgent.match(/Windows Phone/i)
+   ) {
+     return true;
+   } else {
+     return false;
+   }
+}
+
+var animationDuration = 150;
+
+$(function() {
+
+    var bodyScrollTop = 0;
+    
+    // cache jQuery objects
+    var $body = $("body");
+    var $header = $(".header");
+    var $bottom = $(".content__contact");
+    var $headerCollapse = $(".header__collapse");
+    var $hamburger = $(".hamburger");
+    var $headerLogo = $(".header__logo");
+    var $headerIcon = $(".header__icon");
+    var $jsHashTag = $('.jsHashTag');
+  
+    function hideMenu(){
+      $("body").removeClass("scrolling--disabled");
+      $headerCollapse.removeClass("header__collapse--in");
+      $hamburger.removeClass("is-active");
+      $headerLogo.removeClass("header__logo--menu-expanded");
+      $headerIcon.removeClass("header__icon--dark");
+   }
+  
+    // Při kliknutí na tlačítko hamburgeru spustit jeho animaci a zobrazit schovaný obsah
+    $("#toggleMenu").click(function() {
+      if ($headerCollapse.hasClass("header__collapse--in")) {
+        hideMenu();
+        $(window).scrollTop(bodyScrollTop); // najet zpátky tam, kde byl uživatel před otevřením menu
+      } else {
+        bodyScrollTop = $(document).scrollTop(); // uložit scroll pozici, protože se aktivuje position: fixed, která odscrolluje nahoru
+        $headerCollapse.addClass("header__collapse--in");
+        $hamburger.addClass("is-active");
+        setTimeout(function(){
+          $body.addClass("scrolling--disabled");
+        }, animationDuration);
+        $headerLogo.addClass("header__logo--menu-expanded");
+        $headerIcon.addClass("header__icon--dark");
+      }
+    })
+  
+    $(".jsCurrentPageNavLink").click(function() {
+      hideMenu();
+    })
+
+    //------------------ skrývání menu při scrolování dolů (v kombinaci s css) pouze na mobilu -----------------------------
+    /*
+    if(isMobile()) {
+        var lastScrollTop = 0;
+        $(window).scroll(function(event){
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop && st > 200){
+            $header.addClass('header--hide');
+        } else {
+            $header.removeClass('header--hide');
+        }
+        lastScrollTop = st;
+        });
+    }
+    */
+});
+
+// Decrese height of menu when scrolled
+var userHasScrolled = false;
+window.onscroll = function (e) {
+    userHasScrolled = true;
+}
+
+window.onload = function() {
+   if (document.getElementsByClassName("header--scroll")[0] !== undefined) {
+      handleHeaderChange();
+   }
+
+   //remove hover effects from nav links due to bug on iPad
+   if(isMobile()) {
+      var els = document.getElementsByClassName('nav__link--hover-inc')
+      while (els[0]) {
+         els[0].classList.remove('nav__link--hover-inc')
+      }
+   }
+}
+
+function handleHeaderChange() {
+  setInterval(function() {
+    var header = document.getElementsByClassName("header--scroll")[0].classList;
+    if (userHasScrolled && (window.scrollY > 200 || window.pageYOffset > 200)) {
+      header.add("header--scrolled")
+    } else {
+      header.remove("header--scrolled")
+    }
+  }, 200)
+}
 $(function(){
     /* SWIPER GALLERY */
     var galleryTop
@@ -52,58 +172,6 @@ $(function(){
     });
     /* SWIPER GALLERY :: END */
 });
-$(function() {
-    
-    /* scrolling efect */
-    var headerOffset = 55;
-    $('.jsScroll').click(function(event) {
-        var el = $(this);
-        var elHref = el.attr('href');
-        if(typeof elHref === "undefined"){
-            elHref = "#" + $(this).data('href');
-        }
-        var top = Math.round($(elHref).offset().top);
-        $('html, body').animate({
-        scrollTop: (top - headerOffset) + 'px'
-        }, 800);
-        return false;
-    });
-
-    // odskrolování na sekci s požadovaným id
-    var urlHash = window.location.hash;
-    var headerOffset = 80;
-    if(urlHash) {
-        var top = Math.round($(urlHash).offset().top);
-        $('html, body').animate({
-            scrollTop: (top - headerOffset) + 'px'
-        }, 800);
-    }    
-
-    /* hashing url while scrolling 
-    var currentHash = "#intro";
-    $(document).scroll(function () {
-        $jsHashTag.each(function () {
-        var top = window.pageYOffset;
-        var distance = top - $(this).offset().top;
-        var hash = '#'+$(this).attr('id');
-        if (distance < 56 && distance > -56 && currentHash != hash) {
-            if(history.pushState) {
-                history.pushState(null, null, hash);
-            }
-            else {
-                location.hash = hash;
-            }
-            currentHash = hash;
-        }
-        });
-    });
-    */
-    
-});
-
-document.querySelector('.consent-modal-button').addEventListener('click', function() {
-    orejime.show();
-}, false);
 /**
  * Swiper 3.4.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -5439,124 +5507,102 @@ else if (typeof define === 'function' && define.amd) {
 }
 //# sourceMappingURL=maps/swiper.js.map
 
+window.addEventListener('load', () => {
+    const menuItems = document.querySelectorAll('.filtermenu__section-container-ul-li');
+    const cards = document.querySelectorAll('.filtermenu__section-cards-card');
+
+    console.log('Načtené dlaždice:', cards.length);
 
 
-var animationDuration = 150;
+    menuItems.forEach(menuItem => {
+        menuItem.addEventListener('click', () => {
+        const status = menuItem.getAttribute('data-status');
 
-$(function() {
+        menuItems.forEach(mi => mi.classList.remove('active'));
+        menuItem.classList.add('active');
 
-    var bodyScrollTop = 0;
-    
-    // cache jQuery objects
-    var $body = $("body");
-    var $header = $(".header");
-    var $bottom = $(".content__contact");
-    var $headerCollapse = $(".header__collapse");
-    var $hamburger = $(".hamburger");
-    var $headerLogo = $(".header__logo");
-    var $headerIcon = $(".header__icon");
-    var $jsHashTag = $('.jsHashTag');
-  
-    function hideMenu(){
-      $("body").removeClass("scrolling--disabled");
-      $headerCollapse.removeClass("header__collapse--in");
-      $hamburger.removeClass("is-active");
-      $headerLogo.removeClass("header__logo--menu-expanded");
-      $headerIcon.removeClass("header__icon--dark");
-   }
-  
-    // Při kliknutí na tlačítko hamburgeru spustit jeho animaci a zobrazit schovaný obsah
-    $("#toggleMenu").click(function() {
-      if ($headerCollapse.hasClass("header__collapse--in")) {
-        hideMenu();
-        $(window).scrollTop(bodyScrollTop); // najet zpátky tam, kde byl uživatel před otevřením menu
-      } else {
-        bodyScrollTop = $(document).scrollTop(); // uložit scroll pozici, protože se aktivuje position: fixed, která odscrolluje nahoru
-        $headerCollapse.addClass("header__collapse--in");
-        $hamburger.addClass("is-active");
-        setTimeout(function(){
-          $body.addClass("scrolling--disabled");
-        }, animationDuration);
-        $headerLogo.addClass("header__logo--menu-expanded");
-        $headerIcon.addClass("header__icon--dark");
-      }
-    })
-  
-    $(".jsCurrentPageNavLink").click(function() {
-      hideMenu();
-    })
-
-    //------------------ skrývání menu při scrolování dolů (v kombinaci s css) pouze na mobilu -----------------------------
-    /*
-    if(isMobile()) {
-        var lastScrollTop = 0;
-        $(window).scroll(function(event){
-        var st = $(this).scrollTop();
-        if (st > lastScrollTop && st > 200){
-            $header.addClass('header--hide');
-        } else {
-            $header.removeClass('header--hide');
-        }
-        lastScrollTop = st;
+        cards.forEach(card => {
+            const cardStatus = card.getAttribute('data-status');
+            if (status === 'all' || cardStatus === status) {
+            card.style.display = 'block';
+            } else {
+            card.style.display = 'none';
+            }
         });
-    }
-    */
+        });
+    });
+
+    cards.forEach(card => {
+        const statusRaw = card.getAttribute('data-status') || '';
+        console.log('Karta status:', statusRaw);
+
+        const status = statusRaw.toLowerCase().trim();
+
+        const rezervaceText = card.querySelector('.overlay--rezervace');
+        const volneText = card.querySelector('.overlay--volne');
+
+        if (status === 'rezervace') {
+            if (rezervaceText) rezervaceText.style.display = 'block';
+            if (volneText) volneText.style.display = 'none';
+            } else {
+            if (rezervaceText) rezervaceText.style.display = 'none';
+            if (volneText) volneText.style.display = 'block';
+        }
+    });
 });
 
-// Decrese height of menu when scrolled
-var userHasScrolled = false;
-window.onscroll = function (e) {
-    userHasScrolled = true;
-}
 
-window.onload = function() {
-   if (document.getElementsByClassName("header--scroll")[0] !== undefined) {
-      handleHeaderChange();
-   }
 
-   //remove hover effects from nav links due to bug on iPad
-   if(isMobile()) {
-      var els = document.getElementsByClassName('nav__link--hover-inc')
-      while (els[0]) {
-         els[0].classList.remove('nav__link--hover-inc')
-      }
-   }
-}
 
-function handleHeaderChange() {
-  setInterval(function() {
-    var header = document.getElementsByClassName("header--scroll")[0].classList;
-    if (userHasScrolled && (window.scrollY > 200 || window.pageYOffset > 200)) {
-      header.add("header--scrolled")
-    } else {
-      header.remove("header--scrolled")
-    }
-  }, 200)
-}
-$(document).foundation();
+$(function() {
+    
+    /* scrolling efect */
+    var headerOffset = 55;
+    $('.jsScroll').click(function(event) {
+        var el = $(this);
+        var elHref = el.attr('href');
+        if(typeof elHref === "undefined"){
+            elHref = "#" + $(this).data('href');
+        }
+        var top = Math.round($(elHref).offset().top);
+        $('html, body').animate({
+        scrollTop: (top - headerOffset) + 'px'
+        }, 800);
+        return false;
+    });
 
-function countUpNumber(el) {
-   var targetValue = $(el).data("value");
-   var numAnim = new CountUp(el, 0, targetValue);
-   if (!numAnim.error) {
-      numAnim.start();
-   } else {
-      console.error(numAnim.error);
-   }
-}
+    // odskrolování na sekci s požadovaným id
+    var urlHash = window.location.hash;
+    var headerOffset = 80;
+    if(urlHash) {
+        var top = Math.round($(urlHash).offset().top);
+        $('html, body').animate({
+            scrollTop: (top - headerOffset) + 'px'
+        }, 800);
+    }    
 
-/* Detect Mobile Browser: */
-function isMobile() {
-   if (navigator.userAgent.match(/Android/i) ||
-     navigator.userAgent.match(/webOS/i) ||
-     navigator.userAgent.match(/iPhone/i) ||
-     navigator.userAgent.match(/iPod/i) ||
-     navigator.userAgent.match(/iPad/i) ||
-     navigator.userAgent.match(/BlackBerry/i) ||
-     navigator.userAgent.match(/Windows Phone/i)
-   ) {
-     return true;
-   } else {
-     return false;
-   }
-}
+    /* hashing url while scrolling 
+    var currentHash = "#intro";
+    $(document).scroll(function () {
+        $jsHashTag.each(function () {
+        var top = window.pageYOffset;
+        var distance = top - $(this).offset().top;
+        var hash = '#'+$(this).attr('id');
+        if (distance < 56 && distance > -56 && currentHash != hash) {
+            if(history.pushState) {
+                history.pushState(null, null, hash);
+            }
+            else {
+                location.hash = hash;
+            }
+            currentHash = hash;
+        }
+        });
+    });
+    */
+    
+});
+
+document.querySelector('.consent-modal-button').addEventListener('click', function() {
+    orejime.show();
+}, false);

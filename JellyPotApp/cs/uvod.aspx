@@ -17,6 +17,7 @@
 <je:content runat="server" forRegion="headerClass">header--scrolled</je:content>
 
 <je:content runat="server" forRegion="main">
+    <!-- INTRO SECTION -->
     <section class="canvas canvas--white canvas--jumbo intro__section">
         <div class="intro__section-bg">
             <je:img runat="server" field=".abstractBg" class="intro__section-bg-img" />
@@ -34,7 +35,47 @@
         </div>
     </section>
 
-    <section class="canvas canvas--white">
-        
+    <!-- FILTERMENU SECTION -->
+    <section class="filtermenu__section">
+        <div class="row">
+            <div class="column medium-2 small-12"></div>
+            <div class="column medium-8 small-12 filtermenu__section-container">
+                <ul class="filtermenu__section-container-ul">
+                    <li class="filtermenu__section-container-ul-li" data-status="all">
+                        <je:item runat="server" field=".note" />
+                    </li>
+                    
+                    <je:repeater runat="server" source=".filterMenu">
+                        <item>
+                            <li class="filtermenu__section-container-ul-li" data-status="<je:item runat='server' field='.name' />">
+                                <je:item runat="server" field=".name"  />
+                            </li>
+                            
+                        </item>
+                    </je:repeater>
+                </ul>
+            </div>
+            <div class="column medium-2 small-12"></div>
+        </div>
+
+        <div class="filtermenu__section-cards">
+            <je:repeater runat="server" source=".tiles">
+                <item>
+                    <div class="filtermenu__section-cards-card" data-status="<je:item runat='server' field='.category.name' />">
+                        <div class="filtermenu__section-cards-card-img">
+                            <je:img runat="server" field=".photo" size="thumb" />
+                            <je:item runat="server" field=".name" tag="div" class="filtermenu__section-cards-card-title" />
+
+                            <div class="filtermenu__section-cards-card-overlay">
+                                <je:item runat="server" field="labels.rezervovatTermin" tag="p" class="filtermenu__section-cards-card-overlay-text overlay--rezervace" />
+                                <je:item runat="server" field="labels.viceInformaci" tag="p" class="filtermenu__section-cards-card-overlay-text overlay--volne" />
+                            </div>
+                        </div>
+                    </div>
+                </item>
+            </je:repeater>
+            
+        </div>
     </section>
 </je:content>
+
