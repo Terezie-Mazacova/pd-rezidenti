@@ -63,18 +63,26 @@
                 <item>
                     <div class="filtermenu__section-cards-card" data-status="<je:item runat='server' field='.category.name' />">
                         <div class="filtermenu__section-cards-card-img">
-                            <je:img runat="server" field=".photo" size="thumb" />
-                            <je:item runat="server" field=".name" tag="div" class="filtermenu__section-cards-card-title" />
+                            <je:img runat="server" field=".photo" size="thumb" class="filtermenu__section-cards-card-img-images" />
+                            <div class="filtermenu__section-cards-card-wrapper">
+                                <je:img runat="server" src="/assets/img/icon-tiles.svg" class="filtermenu__section-cards-card-icon" />
+                                <je:item runat="server" field=".name" tag="div" class="filtermenu__section-cards-card-title" />
+                            </div>
+                            
 
                             <div class="filtermenu__section-cards-card-overlay">
-                                <je:item runat="server" field="labels.rezervovatTermin" tag="p" class="filtermenu__section-cards-card-overlay-text overlay--rezervace" />
-                                <je:item runat="server" field="labels.viceInformaci" tag="p" class="filtermenu__section-cards-card-overlay-text overlay--volne" />
+                                <je:aVar runat="server" href="404.aspx" class="filtermenu__section-cards-card-overlay-text overlay--rezervace primary-btn">
+                                    <je:item runat="server" field="labels.rezervovatTermin" tag="p" />
+                                </je:aVar>
+
+                                <je:aVar runat="server" href="404.aspx" class="filtermenu__section-cards-card-overlay-note overlay--volne">
+                                    <je:item runat="server" field="labels.viceInformaci" tag="p" />
+                                </je:aVar>
                             </div>
                         </div>
                     </div>
                 </item>
             </je:repeater>
-            
         </div>
     </section>
 </je:content>
