@@ -43,22 +43,24 @@ $typo-title: (
   }
   p {
     color: $text;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    font-weight: 400;
     @include breakpoint ("medium") {
       font-size: 1.8rem;
     }
   }
   h2 {
-    font-size: 3.2rem;
+    font-family: $font-s;
+    font-size: 3.8rem;
     line-height: 1.2;
-    font-weight: 600;
+    font-weight: 700;
     color: $text;
-    margin-bottom: .5rem;
     @include breakpoint ("medium") {
-      font-size: 4rem;
+      font-size: 3.8rem;
     }
   }
   h3 {
+    font-family: $font-s;
     font-size: 2.4rem;
     line-height: 1.2;
     font-weight: 600;
@@ -69,6 +71,7 @@ $typo-title: (
     }
   }
   h4 {
+    font-family: $font-s;
     font-size: 2rem;
     line-height: 1.4;
     font-weight: 600;
@@ -79,7 +82,7 @@ $typo-title: (
     margin-top: 1rem;
   }
   h2 + p {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   h3 + p {
     margin-top: 1rem;

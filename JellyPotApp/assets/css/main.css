@@ -2695,20 +2695,22 @@ button:focus {
       text-decoration: none; }
   .text p {
     color: #333333;
-    font-size: 1.6rem; }
+    font-size: 1.8rem;
+    font-weight: 400; }
     @media print, screen and (min-width: 48em) {
       .text p {
         font-size: 1.8rem; } }
   .text h2 {
-    font-size: 3.2rem;
+    font-family: "Podkova", serif;
+    font-size: 3.8rem;
     line-height: 1.2;
-    font-weight: 600;
-    color: #333333;
-    margin-bottom: .5rem; }
+    font-weight: 700;
+    color: #333333; }
     @media print, screen and (min-width: 48em) {
       .text h2 {
-        font-size: 4rem; } }
+        font-size: 3.8rem; } }
   .text h3 {
+    font-family: "Podkova", serif;
     font-size: 2.4rem;
     line-height: 1.2;
     font-weight: 600;
@@ -2718,6 +2720,7 @@ button:focus {
       .text h3 {
         font-size: 3.2rem; } }
   .text h4 {
+    font-family: "Podkova", serif;
     font-size: 2rem;
     line-height: 1.4;
     font-weight: 600;
@@ -2726,7 +2729,7 @@ button:focus {
   .text p + p {
     margin-top: 1rem; }
   .text h2 + p {
-    margin-top: 1rem; }
+    margin-top: 2rem; }
   .text h3 + p {
     margin-top: 1rem; }
   .text h4 + p {
@@ -3933,3 +3936,18 @@ button:focus {
         font-weight: 400;
         text-align: center;
         margin-top: 1.5rem; }
+
+.infoBlocks__container {
+  display: -ms-flexbox;
+  display: flex;
+  gap: 14.5rem; }
+  .infoBlocks__container:nth-child(odd) {
+    -ms-flex-direction: row;
+        flex-direction: row; }
+  .infoBlocks__container:nth-child(even) {
+    -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse; }
+  .infoBlocks__container + .infoBlocks__container {
+    margin-top: 4rem; }
+  .infoBlocks__container-text {
+    margin-top: 3rem; }

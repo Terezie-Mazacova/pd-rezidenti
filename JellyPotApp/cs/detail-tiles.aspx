@@ -18,6 +18,7 @@
 <je:content runat="server" forRegion="headerClass">header--scrolled</je:content>
 
 <je:content runat="server" forRegion="main">
+    <!-- INTRO SECTION -->
     <section class="canvas canvas--white intro">
         <div class="introcontainer">
             <div class="introcontainer__wrapper">
@@ -32,22 +33,25 @@
         </div>
     </section>
 
-    <section class="canvas canvas--white">
+    <!-- INFOBLOCKS SECTION -->
+    <section class="canvas canvas--white infoBlocks">
         <div class="row">
             <div class="column medium-12 small-12">
                 <je:repeater runat="server" source=".infoBlock">
                     <item>
-                        
-                        <je:item runat="server" field=".blockText" tag="div" class="" />
-                        <je:img runat="server" field=".photo" size="thumb" class="" />
+                        <div class="infoBlocks__container">
+                            <je:item runat="server" field=".blockText" tag="div" class="infoBlocks__container-text text" />
+                            <je:img runat="server" field=".photo" size="thumb" class="infoBlocks__container-photo" />
+                        </div>
                     </item>
                 </je:repeater>
             </div>
         </div>
     </section>
 
-    <section>
-        <div>
+    <!-- TEXTBLOCKS SECTION -->
+    <section class="canvas canvas--white textBlocks">
+        <div class="row">
             <je:repeater runat="server" source=".textBlock">
                 <item>
                     <je:item runat="server" field=".text" tag="div" class="class" />
