@@ -71,11 +71,11 @@
                             
 
                             <div class="filtermenu__section-cards-card-overlay">
-                                <je:aVar runat="server" href="404.aspx" class="filtermenu__section-cards-card-overlay-text overlay--rezervace primary-btn">
+                                <je:aVar runat="server" href="404.aspx" class="filtermenu__section-cards-card-overlay-text overlay--rezervace primary-btn"> <!-- TEMPORARY PAGE -->
                                     <je:item runat="server" field="labels.rezervovatTermin" tag="p" />
                                 </je:aVar>
 
-                                <je:aVar runat="server" href="404.aspx" class="filtermenu__section-cards-card-overlay-note overlay--volne">
+                                <je:aVar runat="server" href="detail-tiles.aspx" class="filtermenu__section-cards-card-overlay-note overlay--volne">
                                     <je:item runat="server" field="labels.viceInformaci" tag="p" />
                                 </je:aVar>
                             </div>
@@ -84,6 +84,10 @@
                 </item>
             </je:repeater>
         </div>
+    </section>
+
+    <section>
+        
     </section>
 </je:content>
 

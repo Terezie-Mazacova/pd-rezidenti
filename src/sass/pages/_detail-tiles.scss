@@ -1,0 +1,58 @@
+.intro {
+    margin: 0 3rem;
+
+    .introcontainer {
+        position: relative;
+
+        &__wrapper {
+            position: relative;
+
+            &-photo {
+                display: block;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            &-overlay {
+                position: absolute;
+                inset: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                pointer-events: none;
+            }
+        }
+
+        &__text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: $white;
+            max-width: 90rem;
+            margin: 0 auto;
+            padding: 0 2rem;
+
+            &-title {
+                font-family: $font-s;
+                font-size: 6.8rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                text-decoration: underline;
+                text-underline-offset: 1.5rem;
+                text-decoration-thickness: 0.3rem;
+                text-decoration-color: $primary;
+            }
+
+            &-perex {
+                font-size: 2.4rem;
+                font-weight: 400;
+                text-align: center;
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}

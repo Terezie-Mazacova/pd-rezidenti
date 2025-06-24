@@ -3884,3 +3884,52 @@ button:focus {
       text-decoration: underline; }
       .error__text a:hover {
         text-decoration: none; }
+
+.intro {
+  margin: 0 3rem; }
+  .intro .introcontainer {
+    position: relative; }
+    .intro .introcontainer__wrapper {
+      position: relative; }
+      .intro .introcontainer__wrapper-photo {
+        display: block;
+        width: 100%;
+        object-fit: cover; }
+      .intro .introcontainer__wrapper-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        pointer-events: none; }
+    .intro .introcontainer__text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column;
+      -ms-flex-pack: center;
+          justify-content: center;
+      -ms-flex-align: center;
+          align-items: center;
+      color: #fff;
+      max-width: 90rem;
+      margin: 0 auto;
+      padding: 0 2rem; }
+      .intro .introcontainer__text-title {
+        font-family: "Podkova", serif;
+        font-size: 6.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: underline;
+        text-underline-offset: 1.5rem;
+        text-decoration-thickness: 0.3rem;
+        -webkit-text-decoration-color: #CFA63B;
+                text-decoration-color: #CFA63B; }
+      .intro .introcontainer__text-perex {
+        font-size: 2.4rem;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 1.5rem; }
