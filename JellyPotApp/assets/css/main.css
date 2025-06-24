@@ -3935,7 +3935,8 @@ button:focus {
         text-underline-offset: 1.5rem;
         text-decoration-thickness: 0.3rem;
         -webkit-text-decoration-color: #CFA63B;
-                text-decoration-color: #CFA63B; }
+                text-decoration-color: #CFA63B;
+        text-align: center; }
       .intro .introcontainer__text-perex {
         font-size: 2.4rem;
         font-weight: 400;
@@ -3945,7 +3946,9 @@ button:focus {
 .infoBlocks__container {
   display: -ms-flexbox;
   display: flex;
-  gap: 14.5rem; }
+  gap: 14.5rem;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
   .infoBlocks__container:nth-child(odd) {
     -ms-flex-direction: row;
         flex-direction: row; }
