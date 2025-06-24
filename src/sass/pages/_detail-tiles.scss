@@ -79,3 +79,29 @@
         }
     }
 }
+
+.textBlocks {
+    &__container {
+        padding-top: 4rem;
+        border-top: 0.3rem solid $primary;
+
+        &-photo {
+            margin-bottom: 4rem;
+        }
+
+        &-text {
+            margin-bottom: 4rem;
+        }
+
+        &-images {
+            display: flex;
+            gap: 4rem;
+            margin-bottom: 4rem;
+
+            &-img {
+                width: 43rem;
+                height: 24rem;
+            }
+        }
+    }
+}

@@ -2681,8 +2681,14 @@ button:focus {
   font-size: 2.4rem;
   font-weight: 400; }
 
+.caption {
+  color: #A8A8A8;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-top: 0.5rem; }
+
 .text {
-  color: #333333;
+  color: #000;
   font-size: 1.6rem;
   font-weight: 400; }
   @media print, screen and (min-width: 48em) {
@@ -2693,8 +2699,11 @@ button:focus {
     text-decoration: underline; }
     .text a:hover {
       text-decoration: none; }
+  .text--md p {
+    font-size: 2rem;
+    margin-bottom: 4rem; }
   .text p {
-    color: #333333;
+    color: #000;
     font-size: 1.8rem;
     font-weight: 400; }
     @media print, screen and (min-width: 48em) {
@@ -2705,7 +2714,7 @@ button:focus {
     font-size: 3.8rem;
     line-height: 1.2;
     font-weight: 700;
-    color: #333333; }
+    color: #000; }
     @media print, screen and (min-width: 48em) {
       .text h2 {
         font-size: 3.8rem; } }
@@ -2713,19 +2722,17 @@ button:focus {
     font-family: "Podkova", serif;
     font-size: 2.4rem;
     line-height: 1.2;
-    font-weight: 600;
-    color: #333333;
-    margin-bottom: .5rem; }
+    font-weight: 700;
+    color: #000; }
     @media print, screen and (min-width: 48em) {
       .text h3 {
-        font-size: 3.2rem; } }
+        font-size: 2.4rem; } }
   .text h4 {
     font-family: "Podkova", serif;
     font-size: 2rem;
     line-height: 1.4;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: .5rem; }
+    font-weight: 700;
+    color: #0a0a0a; }
   .text p + p {
     margin-top: 1rem; }
   .text h2 + p {
@@ -2741,23 +2748,21 @@ button:focus {
   .text p + h4 {
     margin-top: 2rem; }
   .text ul {
-    padding: 0 2rem 0 2.5rem;
-    list-style-type: disc;
-    text-align: left;
-    font-size: 1.6rem;
-    margin-top: 1rem; }
+    margin-bottom: 4rem; }
   .text li {
-    position: relative;
-    margin-bottom: 1.5rem; }
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #0a0a0a;
+    line-height: 1.7; }
   .text--perex {
-    color: #333333;
+    color: #000;
     font-weight: 400;
     font-size: 1.7rem; }
     @media print, screen and (min-width: 64em) {
       .text--perex {
         font-size: 2.4rem; } }
     .text--perex p {
-      color: #333333;
+      color: #000;
       font-weight: 400;
       font-size: 1.7rem; }
       @media print, screen and (min-width: 64em) {
@@ -3880,7 +3885,7 @@ button:focus {
         font-size: 10rem; } }
   .error__text {
     text-align: center;
-    color: #333333; }
+    color: #000; }
     .error__text a {
       font-weight: 600;
       color: #CFA63B;
@@ -3951,3 +3956,19 @@ button:focus {
     margin-top: 4rem; }
   .infoBlocks__container-text {
     margin-top: 3rem; }
+
+.textBlocks__container {
+  padding-top: 4rem;
+  border-top: 0.3rem solid #CFA63B; }
+  .textBlocks__container-photo {
+    margin-bottom: 4rem; }
+  .textBlocks__container-text {
+    margin-bottom: 4rem; }
+  .textBlocks__container-images {
+    display: -ms-flexbox;
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 4rem; }
+    .textBlocks__container-images-img {
+      width: 43rem;
+      height: 24rem; }

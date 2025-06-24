@@ -14,6 +14,7 @@ $typo-title: (
 
 @include create-typo("title", $typo-title);
 
+// == MY STYLE ==
 .main-title {
   font-family: $font-s;
   font-size: 5rem;
@@ -25,6 +26,13 @@ $typo-title: (
 .perex {
   font-size: 2.4rem;
   font-weight: 400;
+}
+
+.caption {
+  color: $darkGrey;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
 }
 
 .text {
@@ -39,6 +47,12 @@ $typo-title: (
     text-decoration: underline;
     &:hover {
       text-decoration: none;
+    }
+  }
+  &--md {
+    p {
+      font-size: 2rem;
+      margin-bottom: 4rem;
     }
   }
   p {
@@ -63,20 +77,18 @@ $typo-title: (
     font-family: $font-s;
     font-size: 2.4rem;
     line-height: 1.2;
-    font-weight: 600;
+    font-weight: 700;
     color: $text;
-    margin-bottom: .5rem;
     @include breakpoint ("medium") {
-      font-size: 3.2rem;
+      font-size: 2.4rem;
     }
   }
   h4 {
     font-family: $font-s;
     font-size: 2rem;
     line-height: 1.4;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: .5rem;
+    font-weight: 700;
+    color: $black
   }
   p + p {
     margin-top: 1rem;
@@ -100,15 +112,17 @@ $typo-title: (
     margin-top: 2rem;
   }
   ul {
-    padding: 0 2rem 0 2.5rem;
-    list-style-type: disc;
-    text-align: left;
-    font-size: 1.6rem;
-    margin-top: 1rem;
+    //padding: 0 2rem 0 2.5rem;
+    //list-style-type: disc;
+    //text-align: left;
+    //font-size: 1.6rem;
+    margin-bottom: 4rem;
   }
   li {
-    position: relative;
-    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: $black;
+    line-height: 1.7;
   }
   &--perex {
     color: $text;

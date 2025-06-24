@@ -51,24 +51,60 @@
 
     <!-- TEXTBLOCKS SECTION -->
     <section class="canvas canvas--white textBlocks">
-        <div class="row">
+        <div class="row textBlocks__container">
             <je:repeater runat="server" source=".textBlock">
-                <item>
-                    <je:item runat="server" field=".text" tag="div" class="class" />
-                    <je:item runat="server" field=".textList" tag="div" class="class" />
+                <item1>
+                    <div class="medium-8 small-12">
+                        <je:item runat="server" field=".text" tag="div" class="text text--md" />
+                        <je:item runat="server" field=".textList" tag="div" class="textBlocks__container-textList text" />
+                    </div>
 
                     <je:repeater runat="server" source=".photoBlock">
                         <item>
-                            <je:img runat="server" field=".photo" size="thumb" class="" />
+                            <div class="textBlocks__container-photo">
+                                <je:img runat="server" field=".photo" size="thumb" />
+                                <je:item runat="server" field=".caption" tag="p" class="caption" />
+                            </div>
                         </item>
                     </je:repeater>
+                </item1>
 
+                <item2>
+                    <div class="medium-8 small-12 textBlocks__container-text">
+                        <je:item runat="server" field=".text" tag="div" class="text" />
+                    </div>
+                    
+
+                    <div class="textBlocks__container-images">
+                        <je:repeater runat="server" source=".photoBlock">
+                            <item>
+                                <div>
+                                    <je:img runat="server" field=".photo" size="thumb" class="textBlocks__container-images-img" />
+                                    <je:item runat="server" field=".caption" tag="p" class="caption" />
+                                </div>
+                                
+                            </item>
+                        </je:repeater>
+                    </div>
+                    
+                </item2>
+
+                <item3>
+                    <div class="medium-8 small-12">
+                        <je:item runat="server" field=".text" tag="div" class="text" />
+                    </div>
+
+                    <!--
                     <je:repeater runat="server" source=".file">
                         <item>
-                            <je:item runat="server" field=".name" tag="div" class="" />
+                            <je:filelink runat="server" field=".file" class="clasa1">
+                                <je:img runat="server" src="/assets/img/icon-soubor.svg" class="class2" />
+                                <je:item runat="server" field=".name" tag="p" class="clasa2" />
+                            </je:filelink>
                         </item>
                     </je:repeater>
-                </item>
+                    -->
+                </item3>
             </je:repeater>
         </div>
     </section>
