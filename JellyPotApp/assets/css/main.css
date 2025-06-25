@@ -3410,7 +3410,7 @@ button:focus {
     .news__subscribe-arrow {
       transition: transform 0.3s ease; }
     .news__subscribe-button:hover .news__subscribe-arrow {
-      transform: translateX(3px); }
+      transform: translateX(0.3rem); }
 
 .splide__arrow {
   background-color: transparent !important;

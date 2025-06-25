@@ -85,6 +85,7 @@
             </je:repeater>
         </div>
     </section>
+
     <!-- NEWS SECTION -->
     <section class="canvas canvas--white news">
         <div class="row ">
@@ -134,6 +135,11 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- SCROLL SECTION -->
+    <section class="canvas canvas--white">
+
     </section>
 </je:content>
 
