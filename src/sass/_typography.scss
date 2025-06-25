@@ -23,6 +23,12 @@ $typo-title: (
   margin-bottom: 3rem;
 }
 
+.title-small {
+  //text-shadow: 0px 0px 22px rgba(0, 0, 0, 0.25);
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
 .perex {
   font-size: 2.4rem;
   font-weight: 400;
@@ -35,8 +41,21 @@ $typo-title: (
   margin-top: 0.5rem;
 }
 
+.text-small {
+  color: $darkGrey;
+  font-size: 1.6rem;
+  font-weight: 400;
+  //text-shadow: 0px 0px 22px rgba(0, 0, 0, 0.25) !important;
+}
+
+
+
+
+
+
+
 .text {
-  color: $text;
+  //color: $text;
   font-size: 1.6rem;
   font-weight: 400;
   @include breakpoint ("medium") {
@@ -56,7 +75,7 @@ $typo-title: (
     }
   }
   p {
-    color: $text;
+    //color: $text;
     font-size: 1.8rem;
     font-weight: 400;
     @include breakpoint ("medium") {
@@ -68,7 +87,7 @@ $typo-title: (
     font-size: 3.8rem;
     line-height: 1.2;
     font-weight: 700;
-    color: $text;
+    //color: $text;
     @include breakpoint ("medium") {
       font-size: 3.8rem;
     }

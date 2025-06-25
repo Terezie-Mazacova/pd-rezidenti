@@ -5557,6 +5557,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+document.addEventListener( 'DOMContentLoaded', function() {
+    var splide = new Splide( '.splide', {
+        perPage: 3,
+        //type: 'loop',
+        pagination: false,
+        perMove: 1,
+        gap: '6rem',
+        width: '100%',
+    } );
+    splide.mount();
+} );
+
+
+
+
 $(function() {
     
     /* scrolling efect */

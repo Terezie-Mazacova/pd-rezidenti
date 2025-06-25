@@ -2677,6 +2677,10 @@ button:focus {
   line-height: 1;
   margin-bottom: 3rem; }
 
+.title-small {
+  font-size: 2.4rem;
+  font-weight: 700; }
+
 .perex {
   font-size: 2.4rem;
   font-weight: 400; }
@@ -2687,8 +2691,12 @@ button:focus {
   font-weight: 400;
   margin-top: 0.5rem; }
 
+.text-small {
+  color: #A8A8A8;
+  font-size: 1.6rem;
+  font-weight: 400; }
+
 .text {
-  color: #000;
   font-size: 1.6rem;
   font-weight: 400; }
   @media print, screen and (min-width: 48em) {
@@ -2703,7 +2711,6 @@ button:focus {
     font-size: 2rem;
     margin-bottom: 4rem; }
   .text p {
-    color: #000;
     font-size: 1.8rem;
     font-weight: 400; }
     @media print, screen and (min-width: 48em) {
@@ -2713,8 +2720,7 @@ button:focus {
     font-family: "Podkova", serif;
     font-size: 3.8rem;
     line-height: 1.2;
-    font-weight: 700;
-    color: #000; }
+    font-weight: 700; }
     @media print, screen and (min-width: 48em) {
       .text h2 {
         font-size: 3.8rem; } }
@@ -3300,6 +3306,123 @@ button:focus {
           width: 100%; }
     .filtermenu__section-cards-card:hover .filtermenu__section-cards-card-overlay {
       opacity: 1; }
+
+.news {
+  background-color: #0a0a0a;
+  color: #fff; }
+  .news__header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    text-align: center; }
+    .news__header-title {
+      text-transform: uppercase;
+      color: #fff; }
+    .news__header-text {
+      margin-bottom: 8rem !important;
+      max-width: 70rem;
+      color: #fff; }
+  .news__splide {
+    margin-bottom: 8rem; }
+    .news__splide-imgWrapper {
+      position: relative; }
+      .news__splide-imgWrapper img {
+        width: 100%;
+        display: block; }
+      .news__splide-imgWrapper::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba(207, 166, 59, 0.75);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1; }
+      .splide__slide:hover .news__splide-imgWrapper::after {
+        opacity: 1; }
+    .news__splide-content {
+      margin-top: 2rem; }
+      .news__splide-content-title {
+        margin-bottom: 0.5rem;
+        position: relative;
+        display: inline-block; }
+        .news__splide-content-title::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0.1rem;
+          width: 0;
+          height: 0.2rem;
+          background-color: rgba(207, 166, 59, 0.75);
+          transition: width 0.3s ease; }
+        .splide__slide:hover .news__splide-content-title::after {
+          width: 100%; }
+      .news__splide-content-text p {
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: #fff; }
+  .news__subscribe {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: center;
+        align-items: center;
+    text-align: center; }
+    .news__subscribe-container {
+      max-width: 50rem; }
+    .news__subscribe-form {
+      display: -ms-flexbox;
+      display: flex;
+      border: 0.1rem solid #C1B480;
+      overflow: hidden;
+      margin-top: 2.5rem;
+      height: 4.6rem; }
+    .news__subscribe-input {
+      -ms-flex: 1;
+          flex: 1;
+      padding: 1rem 0 1rem 5rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+      border: none;
+      outline: none;
+      color: #CFA63B;
+      background-color: white; }
+      .news__subscribe-input:-ms-input-placeholder {
+        color: #CFA63B;
+        opacity: 1;
+        font-family: "Barlow", sans-serif; }
+      .news__subscribe-input::placeholder {
+        color: #CFA63B;
+        opacity: 1;
+        font-family: "Barlow", sans-serif; }
+    .news__subscribe-button {
+      background-color: #CFA63B;
+      border: none;
+      padding: 0 2rem;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+      cursor: pointer; }
+    .news__subscribe-arrow {
+      transition: transform 0.3s ease; }
+    .news__subscribe-button:hover .news__subscribe-arrow {
+      transform: translateX(3px); }
+
+.splide__arrow {
+  background-color: transparent !important;
+  border: 0.1rem solid #CFA63B !important;
+  height: 4rem !important;
+  width: 4rem !important; }
+  .splide__arrow svg {
+    fill: #CFA63B !important; }
+  .splide__arrow--next {
+    right: -8rem !important; }
+  .splide__arrow--prev {
+    left: -8rem !important; }
 
 .primary-btn {
   color: #fff;

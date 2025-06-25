@@ -14,10 +14,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <link rel="icon" type="image/ico" href="/assets/img/favicon.ico" />
-    <je:stylelink runat="server" href="/assets/css/main.css?v=00" />
+    <je:stylelink runat="server" href="/assets/css/main.css?v=03" />
     <je:region runat="server" id="head" />
     <je:scriptLink runat="server" src="/assets/js/jquery.min.js" />
     <je:scriptLink runat="server" src="/assets/js/orejime.js?v=03" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 </head>
 <body class="<je:if runat="server" condition="cookies.big"><then>cookies--big</then><else>cookies--small</else></je:if>">
     <je:item runat="server" field="headerCode.code" />
@@ -45,5 +47,7 @@
 
     <je:region runat="server" id="footerScripts" />
     <je:item runat="server" field="footerCode.code" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 </body>
 </html>
