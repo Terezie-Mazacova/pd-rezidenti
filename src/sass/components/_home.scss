@@ -50,7 +50,10 @@
             gap: 5rem;
 
             &-li {
-                border: 1px solid $primary;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                border: 0.1rem solid $primary;
                 padding: 1.3rem 4rem;
                 text-transform: uppercase;
                 color: $primary;
@@ -223,6 +226,17 @@
         &-content {
             margin-top: 2rem;
 
+            &-text {
+                p {
+                    font-size: 1.8rem;
+                    font-weight: 400;
+                    color: $white;
+                    //text-shadow: 0px 0px 22px rgba(0, 0, 0, 0.25);
+                }
+                
+            }
+        }
+
             &-title {
                 margin-bottom: 0.5rem;
                 position: relative;
@@ -243,17 +257,6 @@
                     width: 100%;
                 }
             }
-
-            &-text {
-                p {
-                    font-size: 1.8rem;
-                    font-weight: 400;
-                    color: $white;
-                    //text-shadow: 0px 0px 22px rgba(0, 0, 0, 0.25);
-                }
-                
-            }
-        }
     }
 
     &__subscribe {

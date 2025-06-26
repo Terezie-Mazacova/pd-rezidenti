@@ -89,6 +89,11 @@
 
         &-photo {
             margin-bottom: 4rem;
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
         }
 
         &-text {
@@ -103,6 +108,24 @@
             &-img {
                 width: 43rem;
                 height: 24rem;
+            }
+        }
+        &-gallery {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            &--1 {
+                .textBlocks__container-photo {
+                    width: 100%;
+                }
+            }
+            &--2 {
+                .textBlocks__container-photo {
+                    width: calc(50% - 1.5rem);
+                }
             }
         }
     }

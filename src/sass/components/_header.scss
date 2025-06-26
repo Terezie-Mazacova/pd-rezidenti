@@ -12,10 +12,18 @@
   color: white;
   background: $white;
   transition: all ease .5s;
-  margin-left: 3rem;
 
   @include breakpoint('mainNav'){
     height: 7.2rem;
+  }
+
+  ::before {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 3rem;
+    color: pink;
+    z-index: 999;
   }
 
 
@@ -46,7 +54,6 @@
     align-items: center; //vertikálně na střed
     justify-content: space-between; //logo vlevo, hamburger tlačítko vpravo (zbytek je ignorován kvůli display: none)
     //border-bottom: 1px solid red;
-    margin-right: 3rem;
 
     &::after {
       content: "";
@@ -266,7 +273,7 @@
       text-transform: uppercase;
 
       &:hover, &:active, &--active {
-        color: white;
+        //color: white;
         transition: color linear .3s;
       }
     }
