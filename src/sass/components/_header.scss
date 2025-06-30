@@ -17,12 +17,14 @@
     height: 7.2rem;
   }
 
-  ::before {
+  &::before {
     content: '';
+    position: absolute;
     top: 0;
     left: 0;
     width: 3rem;
-    color: pink;
+    height: 100%;
+    background-color: $white;
     z-index: 999;
   }
 
@@ -40,6 +42,7 @@
     height: 100%;
     padding-bottom: 0.5rem;
     align-items: flex-end;
+    padding-left: 3rem;
     
     &-img {
       height: 6rem;
@@ -108,6 +111,8 @@
 }
 
 // Hamburger
+
+/*
 .hamburger, .hamburger-wrapper {
   display: inline-flex; //aby byl text zarovnán na střed
   align-items: center;
@@ -144,7 +149,7 @@
   font-size: 1.4rem;
   margin-right: .8rem;
 }
-
+*/
 //------ zákázat scrollování -------
 //přidá se na <body>, když je přes něj nějaký overlay, aby se zabránilo scrollování pozadí
 .scrolling--disabled {

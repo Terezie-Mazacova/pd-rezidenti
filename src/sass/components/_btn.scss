@@ -1,14 +1,20 @@
 .primary-btn {
     color: $white;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 700;
     text-transform: uppercase;
     background-color: $primary;
-    padding: 1.3rem 4rem;
+    padding: 1.3rem 2rem;
     transition: all 0.3s ease;
+    text-align: center;
     
     &:hover {
         background-color: $white;
         color: $primary;
+    }
+
+    @include breakpoint ("medium") {
+        font-size: 2rem;
+        padding: 1.3rem 4rem;
     }
 }

@@ -29,26 +29,19 @@
         <div class="column medium-5 small-12 footer__contact footer__contact--client">
             <je:item runat="server" field="footer.clientLabel" tag="p" class="footer__contact-label" />
             <je:repeater runat="server" source="footer.clientContact">
-                <item1>
+                <item>
                     <div class="footer__contact-item">
                         <je:img runat="server" field=".icon" class="footer__contact-item-icon" />
                         <je:item runat="server" field=".text" tag="p" class="footer__contact-item-text" />
                     </div>
-                </item1>
-
-                <item2>
-                    <div class="footer__contact-item">
-                        <je:img runat="server" field=".icon" class="footer__contact-item-icon" />
-                        <je:item runat="server" field=".text" tag="p" class="footer__contact-item-text footer__contact-item-text--orange" />
-                    </div>
-                </item2>
+                </item>
             </je:repeater>
         </div>
 
         <div class="column medium-5 small-12 footer__block-links">
             <je:repeater runat="server" source="footer.footerLinks">
                 <item>
-                    <je:aVar runat="server" href="404.aspx" class="footer__block-links-wrapper"> <!--TEMPORARY PAGE -->
+                    <je:aVar runat="server" href="detail-links.aspx" class="footer__block-links-wrapper">
                         <je:item runat="server" field=".btn" tag="p" class="footer__block-links-text" />
                         <je:img runat="server" src="/assets/img/arrow.svg" class="footer__block-links-icon" />
                     </je:aVar>

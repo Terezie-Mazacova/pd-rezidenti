@@ -41,7 +41,10 @@
                     <item>
                         <div class="infoBlocks__container">
                             <je:item runat="server" field=".blockText" tag="div" class="infoBlocks__container-text text" />
-                            <je:img runat="server" field=".photo" size="thumb" class="infoBlocks__container-photo" />
+                            <div class="infoBlocks__container-wrapper">
+                                <je:img runat="server" field=".photo" size="fullHD" class="infoBlocks__container-photo" />
+                            </div>
+                            
                         </div>
                     </item>
                 </je:repeater>
@@ -52,10 +55,20 @@
     <!-- TEXTBLOCKS SECTION -->
     <section class="canvas canvas--white textBlocks">
         <div class="row textBlocks__container">
+            <div class="textBlocks__container-line"></div>
             <je:repeater runat="server" source=".textBlock">
                 <item>
                     <div class="column medium-8 small-12">
                         <je:item runat="server" field=".text" tag="div" class="text text--md" />
+                        
+                        <je:repeater runat="server" source=".file">
+                            <item>
+                                <je:fileLink runat="server" field=".file" class="textBlocks__container-file">
+                                    <je:img runat="server" src="/assets/img/icon-soubor.svg" class="" />
+                                    <je:item runat="server" field=".name" tag="p" class="textBlocks__container-note" />
+                                </je:fileLink>
+                            </item>
+                        </je:repeater>
                     </div>
                     <div class="column medium-8 small-12 textBlocks__container-gallery textBlocks__container-gallery--<je:repeater runat="server" source=".photoBlock"><lastItem1><je:item runat="server" field=".itr"/></lastItem1></je:repeater>">
                         <je:repeater runat="server" source=".photoBlock">

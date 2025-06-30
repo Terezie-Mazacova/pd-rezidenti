@@ -40,7 +40,9 @@
         <div class="row">
             <div class="column medium-2 small-12"></div>
             <div class="column medium-8 small-12 filtermenu__section-container">
+                <div class="filtermenu__section-line"></div>
                 <ul class="filtermenu__section-container-ul">
+                    
                     <li class="filtermenu__section-container-ul-li" data-status="all">
                         <je:item runat="server" field=".note" />
                     </li>
@@ -101,7 +103,7 @@
                             <je:repeater runat="server" source=".slider" count="6">
                                 <item>
                                     <li class="splide__slide">
-                                        <div class="news__splide-imgWrapper">
+                                        <div class="news__splide-imgwrapper">
                                             <je:img runat="server" field=".photo" size="thumb" />
                                         </div>
                                         
@@ -114,10 +116,13 @@
                                     </li>
                                 </item>
                             </je:repeater>
-                            
                         </ul>
                     </div>
                 </div>
+                
+                <je:a runat="server" href="cards.aspx" class="news__splide-button">
+                    <je:item runat="server" field=".sliderBtn" tag="p" class="news__splide-btn primary-btn" />
+                </je:a>
             </div>
 
             <div class="column medium-12 small-12 news__subscribe">
@@ -138,8 +143,75 @@
     </section>
 
     <!-- SCROLL SECTION -->
-    <section class="canvas canvas--white">
-
+    <section class="map map--border map--1">
+        <div class="anchor" id="lokalita"></div>
+        <div class="map__box">
+            <div class="map__zoom">
+                <je:img runat="server" src="/assets/map/mapaPD_02B.jpg?v=01" class="map__zoom-layer map__zoom-layer--bg" />
+                <je:img runat="server" src="/assets/mapa/mapaPD_cislovani domu.png?v=01" class="map__zoom-layer map__zoom-layer--1" />
+                <je:img runat="server" src="/assets/map/vstupnilobby.png?v=01" class="map__zoom-layer map__zoom-layer--2" />
+                <je:img runat="server" src="/assets/map/vnitroblok.png?v=01" class="map__zoom-layer map__zoom-layer--3" />
+                <je:img runat="server" src="/assets/mapa/vnitroblok_01.png?v=01" class="map__zoom-layer map__zoom-layer--4" />
+                <je:img runat="server" src="/assets/mapa/vnitroblok_02.png?v=01" class="map__zoom-layer map__zoom-layer--5" />
+                <je:img runat="server" src="/assets/mapa/vnitroblok_03.png?v=01" class="map__zoom-layer map__zoom-layer--6" />
+                <je:img runat="server" src="/assets/mapa/vnitroblok_04.png?v=01" class="map__zoom-layer map__zoom-layer--7" />
+                <je:img runat="server" src="/assets/mapa/vnitroblok_05.png?v=01" class="map__zoom-layer map__zoom-layer--8" />
+                <je:img runat="server" src="/assets/map/wellness.png?v=02" class="map__zoom-layer map__zoom-layer--9" />
+                <je:img runat="server" src="/assets/mapa/mapaPD_garaze a kolarna.png?v=01" class="map__zoom-layer map__zoom-layer--10" />
+            </div>
+        </div>
+        <div class="map__text">
+            <je:item runat="server" field=".mapTitle" tag="h2" class="title-3" />
+            <je:repeater runat="server" source=".map">
+                <item>
+                    <div class="map__text-item map__text-item--<je:item runat="server" field=".itr" />">
+                        <je:repeater runat="server" source=".imgBefore">
+                            <header>
+                                <div class="map__text-img">
+                            </header>
+                            <item>
+                                <je:img runat="server" field=".img" size="full" />
+                                <je:img runat="server" field=".png" />
+                            </item>
+                            <footer>
+                                </div>
+                            </footer>
+                        </je:repeater>
+                        <je:item runat="server" field=".text" tag="div" class="map__text-text text" />
+                        <je:repeater runat="server" source=".icons">
+                            <header>
+                                <div class="map__text-icons">
+                            </header>
+                            <item>
+                                <div class="map__text-icons-item">
+                                    <je:img runat="server" field=".icon" class="map__text-icons-icon" />
+                                    <div class="map__text-icons-flex">
+                                        <je:item runat="server" field=".text" tag="div" class="map__text-icons-text" />
+                                        <je:img runat="server" field=".iconAfter" class="map__text-icons-sm" />
+                                    </div>
+                                </div>
+                            </item>
+                            <footer>
+                                </div>
+                            </footer>
+                        </je:repeater>
+                        <je:repeater runat="server" source=".imgAfter">
+                            <header>
+                                <div class="map__text-img">
+                            </header>
+                            <item>
+                                <je:img runat="server" field=".img" size="full" />
+                                <je:img runat="server" field=".png" />
+                            </item>
+                            <footer>
+                                </div>
+                            </footer>
+                        </je:repeater>
+                    </div>
+                </item>
+            </je:repeater>
+            <je:item runat="server" field=".mapLast" tag="h2" class="title-3 map__text-last" />
+        </div>
     </section>
 </je:content>
 

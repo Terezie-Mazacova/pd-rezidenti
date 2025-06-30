@@ -1,5 +1,9 @@
 .intro {
-    margin: 0 3rem;
+    margin: 3rem 0 0 0;
+
+    @include breakpoint ("medium") {
+        margin: 0 3rem;
+    }
 
     .introcontainer {
         position: relative;
@@ -38,7 +42,7 @@
 
             &-title {
                 font-family: $font-s;
-                font-size: 6.8rem;
+                font-size: 4rem;
                 font-weight: 700;
                 text-transform: uppercase;
                 text-decoration: underline;
@@ -46,13 +50,21 @@
                 text-decoration-thickness: 0.3rem;
                 text-decoration-color: $primary;
                 text-align: center;
+
+                @include breakpoint ("medium") {
+                    font-size: 6.8rem;
+                }
             }
 
             &-perex {
-                font-size: 2.4rem;
+                font-size: 1.8rem;
                 font-weight: 400;
                 text-align: center;
                 margin-top: 1.5rem;
+
+                @include breakpoint ("medium") {
+                    font-size: 2.4rem;
+                }
             }
         }
     }
@@ -61,31 +73,90 @@
 .infoBlocks {
     &__container {
         display: flex;
-        gap: 14.5rem;
-        justify-content: space-between;
-
-        &:nth-child(odd) {
-            flex-direction: row;
-        }
-
-        &:nth-child(even) {
-            flex-direction: row-reverse;
-        }
+        flex-direction: column;
+        gap: 2rem;
 
         & + & {
-            margin-top: 4rem;
+            margin-top: 3rem;
         }
 
         &-text {
-            margin-top: 3rem;
+            width: 100%;
+            margin-top: 0;
+
+            @include breakpoint ("large") {
+                margin-top: 3rem;
+                width: 40%;
+            }
+        }
+        &-wrapper {
+            width: 100%;
+
+            @include breakpoint ("large") {
+                width: 60%;
+            }
+        }
+
+        &-photo {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        @include breakpoint ("large") {
+            justify-content: space-between;
+            flex-direction: row;
+            gap: 5rem;
+
+
+            &:nth-child(odd) {
+                flex-direction: row;
+            }
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            & + & {
+                margin-top: 4rem;
+            }
+        }
+
+        @include breakpoint ("xlarge") {
+            gap: 14.5rem;
         }
     }
 }
 
 .textBlocks {
     &__container {
-        padding-top: 4rem;
-        border-top: 0.3rem solid $primary;
+        &-line {
+            width: 100%;
+            border-top: 0.3rem solid $primary;
+            padding-bottom: 2rem;
+            margin: 0 0.5rem;
+
+            @include breakpoint ("medium") {
+                margin: 0 3rem;
+                padding-bottom: 4rem;
+            }
+        }
+
+        &-file {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        &-note {
+            color: $primary;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            @include breakpoint ("medium") {
+                font-size: 2rem;
+            }
+        }
 
         &-photo {
             margin-bottom: 4rem;
@@ -110,22 +181,33 @@
                 height: 24rem;
             }
         }
+
         &-gallery {
             display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: flex-start;
+            flex-direction: column;
             flex-wrap: wrap;
             gap: 1.5rem;
+
             &--1 {
                 .textBlocks__container-photo {
                     width: 100%;
                 }
             }
+
             &--2 {
                 .textBlocks__container-photo {
-                    width: calc(50% - 1.5rem);
+                    width: 100%;
+
+                    @include breakpoint ("large") {
+                        width: calc(50% - 1.5rem);
+                    }
                 }
+            }
+
+            @include breakpoint ("medium") {
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-start;
             }
         }
     }

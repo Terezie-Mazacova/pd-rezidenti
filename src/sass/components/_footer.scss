@@ -1,27 +1,45 @@
 .footer {
     &__contact {
-        padding-bottom: 7.5rem;
-        margin-bottom: 7.5rem;
+        padding-bottom: 4.5rem;
+        margin-bottom: 4.5rem;
         border-bottom: 0.1rem solid $white;
 
         &-label {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 5rem;
+            margin-bottom: 2rem;
+
+            @include breakpoint ("medium") {
+                font-size: 2.2rem;
+                margin-bottom: 5rem;
+            }
+        }
+
+        @include breakpoint ("medium") {
+            padding-bottom: 7.5rem;
+            margin-bottom: 7.5rem;
         }
 
         &-item {
             display: flex;
-            gap: 3.5rem;
+            gap: 2rem;
             cursor: pointer;
 
             & + & {
                 margin-top: 2rem;
             }
 
+            @include breakpoint ("medium") {
+                gap: 3.5rem;
+            }
+
             &-text {
-                font-size: 2rem;
+                font-size: 1.8rem;
                 font-weight: 700;
+
+                @include breakpoint ("medium") {
+                    font-size: 2rem;
+                }
 
                 &:hover {
                     color: $goldenOrange;
@@ -42,7 +60,7 @@
     }
 
     &__identity {
-        margin-bottom: 7.5rem;
+        margin-bottom: 4.5rem;
 
         &-logo {
             margin-bottom: 1.5rem;
@@ -55,15 +73,28 @@
                 line-height: 2;
             }
         }
+
+        @include breakpoint ("medium") {
+            margin-bottom: 7.5rem;
+        }
     }
 
     &__block {
-        margin-bottom: 7.5rem;
+        margin-bottom: 4.5rem;
 
         &-links {
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            //justify-content: center;
+            margin: 2.5rem 0;
+
+            @include breakpoint ("medium") {
+                margin: 0;
+            }
+
+            @include breakpoint ("large") {
+                justify-content: flex-end;
+            }
 
             &-wrapper {
                 display: flex;
@@ -74,7 +105,11 @@
                 }
 
                 & + & {
-                    margin-top: 3rem;
+                    margin-top: 1rem;
+
+                    @include breakpoint ("medium") {
+                        margin-top: 3rem;
+                    }
                 }
             }
 
@@ -101,6 +136,10 @@
                 margin-top: 1.3rem;
                 margin-right: 0.7rem;
             }
+        }
+
+        @include breakpoint ("medium") {
+            margin-bottom: 7.5rem;
         }
     }
 

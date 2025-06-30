@@ -25,6 +25,7 @@
   </div>
 </div>
 
+<%--
 <a id="toggleMenu" class="hamburger-wrapper">
   <span class="hamburger hamburger--3dx">
     <span class="hamburger-text">Menu</span>
@@ -33,3 +34,4 @@
     </span>
   </span>
 </a>
+--%>
