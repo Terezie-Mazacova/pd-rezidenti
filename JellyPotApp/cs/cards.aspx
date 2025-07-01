@@ -19,13 +19,13 @@
 
 <je:content runat="server" forRegion="main">
     
-    <section class="canvas canvas--white intro">
+    <section class="canvas canvas--white">
         <div class="news__cards">
             <je:repeater runat="server" source=".slider" count="6">
                 <item>
-                    <div class="news__cards-card">
-                        <div class="news__splide-imgWrapper">
-                            <je:img runat="server" field=".photo" size="thumb" class="news__cards-img" />
+                    <je:aVar runat="server" href="detail-slider.aspx" class="news__cards-card">
+                        <div class="news__splide-imgwrapper">
+                            <je:img runat="server" field=".photo" size="thumb" class="" />
                         </div>
                         
                         <div class="news__splide-content">
@@ -33,11 +33,9 @@
                             <je:item runat="server" field=".name" tag="h3" class="news__splide-title title-small" />
                             <je:item runat="server" field=".sliderText" tag="div" class="news__splide-content-text " />
                         </div>
-                    </div>
-                    
+                    </je:aVar>
                 </item>
             </je:repeater>
-            
         </div>
     </section>
 

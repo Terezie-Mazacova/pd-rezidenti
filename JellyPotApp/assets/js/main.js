@@ -5507,65 +5507,32 @@ else if (typeof define === 'function' && define.amd) {
 }
 //# sourceMappingURL=maps/swiper.js.map
 
-document.addEventListener('DOMContentLoaded', () => {
-    const menuItems = document.querySelectorAll('.filtermenu__section-container-ul-li');
-    const cards = document.querySelectorAll('.filtermenu__section-cards-card');
-
-    menuItems.forEach(menuItem => {
-        menuItem.addEventListener('click', () => {
-            const selectedStatus = menuItem.getAttribute('data-status')?.replace(/\u00a0/g, ' ').toLowerCase().trim();
-
-            menuItems.forEach(mi => mi.classList.remove('active'));
-            menuItem.classList.add('active');
-
-            cards.forEach(card => {
-                const cardStatus = card.getAttribute('data-status')?.replace(/\u00a0/g, ' ').toLowerCase().trim();
-
-                const rezervaceText = card.querySelector('.overlay--rezervace');
-                const volneText = card.querySelector('.overlay--volne');
-                const titleIcon = card.querySelector('.filtermenu__section-cards-card-icon');
-
-                if (selectedStatus === 'all' || selectedStatus === cardStatus) {
-                    card.style.display = 'block';
-
-                    if (cardStatus === 's rezervací') {
-                        if (rezervaceText) rezervaceText.style.display = 'block';
-                        if (volneText) volneText.style.display = 'block';
-                        if (titleIcon) titleIcon.style.display = 'inline-block';
-                    } else if (cardStatus === 'volné') {
-                        if (rezervaceText) rezervaceText.style.display = 'none';
-                        if (volneText) volneText.style.display = 'block';
-                        if (titleIcon) titleIcon.style.display = 'none';
-                    } else {
-                        if (rezervaceText) rezervaceText.style.display = 'none';
-                        if (volneText) volneText.style.display = 'none';
-                        if (titleIcon) titleIcon.style.display = 'none';
-                    }
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-
-    const allButton = document.querySelector('[data-status="all"]');
-    if (allButton) {
-        allButton.click();
-    }
-});
 
 
-
-
-
-
-
-
-
-
-
-
-
+document.addEventListener( 'DOMContentLoaded', function() {
+    var splide = new Splide( '.splide', {
+        perPage: 3,
+        pagination: false,
+        perMove: 1,
+        gap: '6rem',
+        width: '100%',
+        breakpoints: {
+            1200: {
+                perPage: 3,
+                gap: '1.5rem',
+            },
+            992: {
+                perPage: 2,
+                gap: '1rem',
+            },
+            768: {
+                perPage: 1,
+                gap: '0.5rem',
+            }
+        }
+    } );
+    splide.mount();
+} );
 $(window).scroll(function(){
     if ($(window).scrollTop() > $('.map .map__text-item--1').offset().top - 500) {
         $('.map').removeClass('map--2');
@@ -5641,34 +5608,6 @@ $(window).scroll(function(){
         $('.map').addClass('map--15');
     }
 });
-
-
-
-
-document.addEventListener( 'DOMContentLoaded', function() {
-    var splide = new Splide( '.splide', {
-        perPage: 3,
-        pagination: false,
-        perMove: 1,
-        gap: '6rem',
-        width: '100%',
-        breakpoints: {
-            1200: {
-                perPage: 3,
-                gap: '1.5rem',
-            },
-            992: {
-                perPage: 2,
-                gap: '1rem',
-            },
-            768: {
-                perPage: 1,
-                gap: '0.5rem',
-            }
-        }
-    } );
-    splide.mount();
-} );
 
 $(function() {
     

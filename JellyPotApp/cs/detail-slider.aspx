@@ -1,5 +1,5 @@
 <%@ Page language="C#" %>
-<je:container runat="server" expect="footer.footerLinks">
+<je:container runat="server" expect="mainpage.slider">
     <je:master runat="server" href="/masters/main.master" />
 </je:container>
 
@@ -18,12 +18,12 @@
 <je:content runat="server" forRegion="headerClass">header--scrolled</je:content>
 
 <je:content runat="server" forRegion="main">
-    <!-- DETAIL LINKS -->
+    <!--  -->
     <section class="canvas canvas--white canvas--first">
         <div class="row">
             <div class="column medium-12 small-12">
-                <je:item runat="server" field=".btn" tag="h1" class="main-title" />
-                <je:item runat="server" field=".text" tag="div" class="text" />
+                <je:img runat="server" field=".photo" size="thumb" class="" />
+                <je:item runat="server" field=".sliderText" tag="div" class="text" />
             </div>
         </div>
         

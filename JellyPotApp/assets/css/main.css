@@ -3433,7 +3433,8 @@ button:focus {
       opacity: 0;
       transition: opacity 0.3s ease;
       z-index: 1; }
-    .splide__slide:hover .news__splide-imgwrapper::after {
+    .splide__slide:hover .news__splide-imgwrapper::after,
+    .news__cards-card:hover .news__splide-imgwrapper::after {
       opacity: 1; }
   .news__splide-content {
     margin-top: 2rem; }
@@ -3453,7 +3454,8 @@ button:focus {
       height: 0.2rem;
       background-color: rgba(207, 166, 59, 0.75);
       transition: width 0.3s ease; }
-    .splide__slide:hover .news__splide-title::after {
+    .splide__slide:hover .news__splide-title::after,
+    .news__cards-card:hover .news__splide-title::after {
       width: 100%; }
   .news__splide-button {
     display: -ms-flexbox;

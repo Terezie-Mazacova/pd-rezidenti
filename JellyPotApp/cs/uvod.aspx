@@ -89,7 +89,7 @@
     </section>
 
     <!-- NEWS SECTION -->
-    <section class="canvas canvas--white news" id="news">
+    <section class="canvas canvas--white news" id="sluzby">
         <div class="row ">
             <div class="column medium-12 small-12 news__header">
                 <je:item runat="server" field=".actualInfo" tag="div" class="text text--md" />
@@ -103,16 +103,18 @@
                             <je:repeater runat="server" source=".slider" count="6">
                                 <item>
                                     <li class="splide__slide">
-                                        <div class="news__splide-imgwrapper">
-                                            <je:img runat="server" field=".photo" size="thumb" />
-                                        </div>
-                                        
+                                        <je:aVar runat="server" href="detail-slider.aspx">
+                                            <div class="news__splide-imgwrapper">
+                                                <je:img runat="server" field=".photo" size="thumb" />
+                                            </div>
+                                            
 
-                                        <div class="news__splide-content">
-                                            <je:item runat="server" field=".date" format="dd. MM. yyyy" tag="p" class="text-small" />
-                                            <je:item runat="server" field=".name" tag="h3" class="news__splide-title title-small" />
-                                            <je:item runat="server" field=".sliderText" tag="div" class="news__splide-content-text" />
-                                        </div>
+                                            <div class="news__splide-content">
+                                                <je:item runat="server" field=".date" format="dd. MM. yyyy" tag="p" class="text-small" />
+                                                <je:item runat="server" field=".name" tag="h3" class="news__splide-title title-small" />
+                                                <je:item runat="server" field=".sliderText" tag="div" class="news__splide-content-text" />
+                                            </div>
+                                        </je:aVar>
                                     </li>
                                 </item>
                             </je:repeater>
@@ -143,7 +145,7 @@
     </section>
 
     <!-- SCROLL SECTION -->
-    <section class="map map--border map--1">
+    <section class="map map--border map--1" id="lokalita">
         <div class="anchor" id="lokalita"></div>
         <div class="map__box">
             <div class="map__zoom">

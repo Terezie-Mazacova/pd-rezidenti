@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
     <link rel="icon" type="image/ico" href="/assets/img/favicon.ico" />
-    <je:stylelink runat="server" href="/assets/css/main.css?v=03" />
+    <je:stylelink runat="server" href="/assets/css/main.css?v=05" />
     <je:region runat="server" id="head" />
     <je:scriptLink runat="server" src="/assets/js/jquery.min.js" />
     <je:scriptLink runat="server" src="/assets/js/orejime.js?v=03" />
