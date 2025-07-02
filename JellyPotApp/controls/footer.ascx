@@ -1,5 +1,7 @@
 <%@ Control %>
 
+<a class="consent-modal-button footer__pages-item"><je:text runat="server" textNode="Cookies/detailed" /></a>
+
 <footer class="canvas canvas--footer">
     <div class="row text-left">
         <div class="column medium-12 small-12">

@@ -5608,55 +5608,55 @@ $(window).scroll(function(){
         $('.map').addClass('map--15');
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const menuItems = document.querySelectorAll('.filtermenu__section-container-ul-li');
+    const cards = document.querySelectorAll('.filtermenu__section-cards-card');
 
-$(function() {
-    
-    /* scrolling efect */
-    var headerOffset = 55;
-    $('.jsScroll').click(function(event) {
-        var el = $(this);
-        var elHref = el.attr('href');
-        if(typeof elHref === "undefined"){
-            elHref = "#" + $(this).data('href');
-        }
-        var top = Math.round($(elHref).offset().top);
-        $('html, body').animate({
-        scrollTop: (top - headerOffset) + 'px'
-        }, 800);
-        return false;
-    });
+    menuItems.forEach(menuItem => {
+        menuItem.addEventListener('click', () => {
+            const selectedStatus = menuItem.getAttribute('data-status')?.replace(/\u00a0/g, ' ').toLowerCase().trim();
 
-    // odskrolování na sekci s požadovaným id
-    var urlHash = window.location.hash;
-    var headerOffset = 80;
-    if(urlHash) {
-        var top = Math.round($(urlHash).offset().top);
-        $('html, body').animate({
-            scrollTop: (top - headerOffset) + 'px'
-        }, 800);
-    }    
+            menuItems.forEach(mi => mi.classList.remove('active'));
+            menuItem.classList.add('active');
 
-    /* hashing url while scrolling 
-    var currentHash = "#intro";
-    $(document).scroll(function () {
-        $jsHashTag.each(function () {
-        var top = window.pageYOffset;
-        var distance = top - $(this).offset().top;
-        var hash = '#'+$(this).attr('id');
-        if (distance < 56 && distance > -56 && currentHash != hash) {
-            if(history.pushState) {
-                history.pushState(null, null, hash);
-            }
-            else {
-                location.hash = hash;
-            }
-            currentHash = hash;
-        }
+            cards.forEach(card => {
+                const cardStatus = card.getAttribute('data-status')?.replace(/\u00a0/g, ' ').toLowerCase().trim();
+
+                const rezervaceText = card.querySelector('.overlay--rezervace');
+                const volneText = card.querySelector('.overlay--volne');
+                const titleIcon = card.querySelector('.filtermenu__section-cards-card-icon');
+
+                if (selectedStatus === 'all' || selectedStatus === cardStatus) {
+                    card.style.display = 'block';
+
+                    if (cardStatus === 's rezervací') {
+                        if (rezervaceText) rezervaceText.style.display = 'block';
+                        if (volneText) volneText.style.display = 'block';
+                        if (titleIcon) titleIcon.style.display = 'inline-block';
+                    } else if (cardStatus === 'volné') {
+                        if (rezervaceText) rezervaceText.style.display = 'none';
+                        if (volneText) volneText.style.display = 'block';
+                        if (titleIcon) titleIcon.style.display = 'none';
+                    } else {
+                        if (rezervaceText) rezervaceText.style.display = 'none';
+                        if (volneText) volneText.style.display = 'none';
+                        if (titleIcon) titleIcon.style.display = 'none';
+                    }
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         });
     });
-    */
-    
+
+    const allButton = document.querySelector('[data-status="all"]');
+    if (allButton) {
+        allButton.click();
+    }
 });
+
+
+
 
 document.querySelector('.consent-modal-button').addEventListener('click', function() {
     orejime.show();

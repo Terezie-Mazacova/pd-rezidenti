@@ -45,7 +45,7 @@
 
     <%-- Foundation --%>
     <je:scriptLink runat="server" src="/assets/js/foundation.min.js?v=01" />
-    <je:scriptLink runat="server" src="/assets/js/main.js?v=13" /> <!---->
+    <je:scriptLink runat="server" src="/assets/js/main.js?v=14" /> <!---->
 
     <je:region runat="server" id="footerScripts" />
     <je:item runat="server" field="footerCode.code" />
